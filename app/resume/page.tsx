@@ -6,7 +6,7 @@ import { useAppTheme } from "../context/AppTheme";
 
 export default function User() {
 
-    const origin = window.location.origin
+    const origin = typeof window !== 'undefined' ? window.location.origin : 'https://gitscan.vercel.app'
     const {robotoMono, inter, monsterRat} = useAppTheme();
     return (
         <main className='relative min-h-screen flex flex-col justify-center items-center overflow-hidden p-16'>
