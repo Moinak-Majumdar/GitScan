@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitScan
+
+Welcome to GitScan – your tool for discovering GitHub users and exploring their profiles like never before!
+
+## Overview
+
+GitScan is a simple yet powerful web application that allows you to search for GitHub users by their names and delve into their profiles to learn more about their projects, contributions, and coding activity. Whether you're looking for collaborators, seeking inspiration, or just curious about someone's coding journey, GitScan makes it easy to connect with the vibrant community of developers on GitHub.
+
+## Features
+
+- **User Search:** Quickly find GitHub users by their names.
+- **Profile Exploration:** Dive into users' profiles to see their repositories, contributions, followers, and more.
+- **Easy to Use:** User-friendly interface for seamless navigation and exploration.
+- **Community Engagement:** Connect with fellow developers and explore the diverse world of coding projects.
+- **Open Source:** GitScan is open source, built with love by developers for developers.
 
 ## Getting Started
 
-First, run the development server:
+To get started with GitScan, simply [visit our website](#) and start exploring GitHub users right away! No installation required, just your curiosity and passion for coding.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Contributing
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We welcome contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, feel free to [open an issue](link_to_issues) or [submit a pull request](link_to_pull_requests). Together, we can make GitScan even better for everyone.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Feedback
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Have any questions, suggestions, or feedback? We'd love to hear from you! Reach out to us [via email](mailto:your_email@example.com) or [open an issue](link_to_issues) on GitHub.
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the [MIT License](LICENSE).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Disclaimer:** This project is not affiliated with GitHub. GitScan is an independent project developed by [Moinak Majumdar](https://moinak05.vcercel.app).
