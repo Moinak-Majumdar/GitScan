@@ -28,9 +28,9 @@ export default async function User({ params }: { params: { slug: string } }) {
     const userData: GithubUser = await fetchDetails(params.slug);
 
     return (
-        <main className="min-h-[100vh] flex justify-center items-center py-20 lg:py-10 px-0 md:px-10 lg:px-16 xl:px-36 2xl:px-44">
-            <section className="w-full md:w-fit flex flex-col md:flex-row bg-white0/10 dark:bg-black/20 rounded-xl shadow-2xl dark:shadow-slate-900 shadow-slate-400 overflow-hidden">
-                <div className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12">
+        <main className="h-[100vh] flex justify-center items-center px-0 ">
+            <section className="w-full md:w-fit flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
+                <div className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12 rounded-xl">
                     <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="rounded-full border-2 border-blue-700 p-1" />
                     <Link href={userData.githubUrl} style={inter.style} className="mt-4 text-blue-600 hover:text-blue-500 text-sm md:text-lg">{`@${userData.handel}`}</Link>
                     <article className="max-w-72 mt-4 text-xs md:text-sm">

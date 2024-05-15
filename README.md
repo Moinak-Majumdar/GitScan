@@ -1,35 +1,55 @@
-# GitScan
+# GitScan 🚀
 
-Welcome to GitScan – your tool for discovering GitHub users and exploring their profiles like never before!
+Welcome to GitScan – your tool for exploring GitHub user stats and sharing your GitHub stats like a resume with SEO optimized power!
+
+![Screenshot 2024-05-16 002622](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/251252e4-d6c4-42aa-ba45-3d406f71c137)
+
 
 ## Overview
 
-GitScan is a simple yet powerful web application that allows you to search for GitHub users by their names and delve into their profiles to learn more about their projects, contributions, and coding activity. Whether you're looking for collaborators, seeking inspiration, or just curious about someone's coding journey, GitScan makes it easy to connect with the vibrant community of developers on GitHub.
+GitScan is a powerful web application that allows you to explore GitHub user stats and generate shareable profiles resembling a resume. Dive into the coding activity, contributions, repositories, and more of any GitHub user. With GitScan, you can showcase your GitHub journey with SEO optimization to enhance your online presence and connect with the wider developer community.
 
 ## Features
 
-- **User Search:** Quickly find GitHub users by their names.
-- **Profile Exploration:** Dive into users' profiles to see their repositories, contributions, followers, and more.
-- **Easy to Use:** User-friendly interface for seamless navigation and exploration.
-- **Community Engagement:** Connect with fellow developers and explore the diverse world of coding projects.
-- **Open Source:** GitScan is open source, built with love by developers for developers.
+- **GitHub User Exploration:** Explore the coding journey and activity of any GitHub user.
+- **Profile Generation:** Generate a shareable profile resembling a resume, highlighting your GitHub stats.
+- **SEO Optimization:** Enhance your online presence with SEO optimized profiles for better discoverability.
+- **Shareable Profiles:** Easily share your GitScan profile with others via a unique URL.
+- **User-Friendly Interface:** Simple and intuitive interface for seamless navigation and exploration.
 
 ## Getting Started
 
-To get started with GitScan, simply [visit our website](#) and start exploring GitHub users right away! No installation required, just your curiosity and passion for coding.
+To start exploring GitHub user stats and generating your GitScan profile:
+1. [Visit the website](https://gitscan.vercel.app).
+2. Explore GitHub user stats or generate your own GitScan profile.
+3. Share your GitScan profile with others to showcase your GitHub journey.
+
+## Usage
+
+1. **Explore Users:** Enter a GitHub username to explore their stats, contributions, repositories, and more.
+2. **Generate Profile:** Create your GitScan profile by connecting your GitHub account and customizing your profile settings.
+3. **Share Profile:** Share your GitScan profile URL with potential employers, collaborators, or the wider developer community.
+
+## Screenshots
+- Explore User
+
+![Screenshot 2024-05-16 002819](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/b6ab7fdf-597a-4548-96a1-b3a53725a0b2)
+- Resume page
+
+![Screenshot 2024-05-16 002721](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/3410b7d7-1d26-4a93-89a1-8a86c7862ef6)
 
 ## Contributing
 
-We welcome contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, feel free to [open an issue](link_to_issues) or [submit a pull request](link_to_pull_requests). Together, we can make GitScan even better for everyone.
+We welcome contributions from the community! Whether it's bug fixes, feature enhancements, or feedback, feel free to [open an issue](https://github.com/Moinak-Majumdar/GitScan/issues) or [submit a pull request](https://github.com/Moinak-Majumdar/GitScan/pulls). Together, we can make GitScan even better for everyone.
 
 ## Feedback
 
-Have any questions, suggestions, or feedback? We'd love to hear from you! Reach out to us [via email](mailto:your_email@example.com) or [open an issue](link_to_issues) on GitHub.
+Have any questions, suggestions, or feedback? We'd love to hear from you! Reach out to me or [open an issue](link_to_issues) on GitHub.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache License](./LICENSE.txt).
 
 ---
 
-**Disclaimer:** This project is not affiliated with GitHub. GitScan is an independent project developed by [Moinak Majumdar](https://moinak05.vcercel.app).
+**Disclaimer:** GitScan is an independent project and is not affiliated with GitHub. Developed by [Moinak Majumdar](https://moinak05.vercel.app).

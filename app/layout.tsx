@@ -5,6 +5,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import AppTheme from "./context/AppTheme";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 interface props { children: ReactNode }
@@ -16,8 +17,8 @@ export default function RootLayout({ children }: props) {
         <AppTheme>
             <Navbar />
             {children}
+            <Footer />
         </AppTheme>
-      
       </body>
     </html>
   );

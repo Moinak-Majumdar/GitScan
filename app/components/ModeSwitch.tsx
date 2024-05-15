@@ -24,7 +24,7 @@ function ModeSwitch1() {
 
         if (resolvedTheme === 'light') {
             return (
-                <div className='absolute top-0 right-2 mt-2 z-40 bg-slate-200/50 p-[9px] rounded-full'>
+                <div className='absolute top-0 right-2 mt-2 z-40 bg-blue-400/10 p-[9px] rounded-full'>
                     <DarkModeSwitch
                         checked={false}
                         onChange={() => setTheme('dark')}
@@ -38,35 +38,5 @@ function ModeSwitch1() {
     }
 }
 
-function ModeSwitch2() {
-    const { resolvedTheme, setTheme } = useTheme();
 
-    if (resolvedTheme === 'dark') {
-        return (
-            <div onClick={() => setTheme('light')} className='bg-slate-700/70 shadow-md shadow-black p-2 rounded-lg flex justify-center items-center cursor-pointer'>
-                <p className='capitalize mr-3 font-semibold'>{`${resolvedTheme} mode`}</p>
-                <DarkModeSwitch
-                    checked={true}
-                    onChange={() => setTheme('light')}
-                    size={35}
-                />
-            </div>
-        )
-    }
-
-    if (resolvedTheme === 'light') {
-        return (
-            <div onClick={() => setTheme('dark')} className='bg-slate-200/80 shadow-md shadow-gray-700 p-2 rounded-lg flex justify-center items-center cursor-pointer'>
-                <p className='capitalize mr-3 font-semibold'>{`${resolvedTheme} mode`}</p>
-                <DarkModeSwitch
-                    checked={false}
-                    onChange={() => setTheme('dark')}
-                    size={35}
-                />
-            </div>
-        )
-    }
-}
-
-
-export { ModeSwitch1, ModeSwitch2 }
+export { ModeSwitch1 }
