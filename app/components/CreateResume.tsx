@@ -63,7 +63,7 @@ const CreateResume = (props: props) => {
                     <h3 style={inter.style} className='text-lg lg:text-xl text-slate-600 dark:text-slate-400 capitalize font-semibold'>your resume is created 🎉 </h3>
                     <p style={robotoMono.style} className='mt-2 mb-4 text-slate-700 dark:text-slate-300 text-sm'>
                         Your resume, a masterpiece, ready to display, <br />
-                        In the world of tech, it's time to sway. <br />
+                        In the world of tech, it&apos;s time to sway. <br />
                         With GitHub insights in your array, <br />
                         Share now, and let success play! 💼🌟
                     </p>
