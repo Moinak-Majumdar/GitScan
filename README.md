@@ -1,11 +1,9 @@
-# GitScan 🚀
+# GitScan 🔍
 
 Welcome to GitScan – your tool for exploring GitHub user stats and sharing your GitHub stats like a resume with SEO optimized power!
 
 ![Screenshot 2024-05-16 002622](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/251252e4-d6c4-42aa-ba45-3d406f71c137)
 
-
-## Overview
 
 GitScan is a powerful web application that allows you to explore GitHub user stats and generate shareable profiles resembling a resume. Dive into the coding activity, contributions, repositories, and more of any GitHub user. With GitScan, you can showcase your GitHub journey with SEO optimization to enhance your online presence and connect with the wider developer community.
 
