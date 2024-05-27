@@ -28,10 +28,12 @@ export default async function User({ params }: { params: { slug: string } }) {
     const userData: GithubUser = await fetchDetails(params.slug);
 
     return (
-        <main className="h-[100vh] flex justify-center items-center px-0 ">
-            <section className="w-full md:w-fit flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
+        <main className="md:h-[100vh] flex justify-center items-center px-0">
+            <section className="w-full md:w-fit mt-20 md:mt-12 flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
                 <div className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12 rounded-xl">
-                    <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="rounded-full border-2 border-blue-700 p-1" />
+                    <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full" style={{background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%'}}>
+                        <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="block w-full h-auto rounded-full border-[6px] border-blue-200 dark:border-slate-800" />
+                    </div>
                     <Link href={userData.githubUrl} style={inter.style} className="mt-4 text-blue-600 hover:text-blue-500 text-sm md:text-lg">{`@${userData.handel}`}</Link>
                     <article className="max-w-72 mt-4 text-xs md:text-sm">
                         <p className="text-gray-700 dark:text-gray-300">{userData.bio}</p>
@@ -115,7 +117,7 @@ type metaDataProps = {
 }
 export async function generateMetadata({ params, searchParams }: metaDataProps, parent: ResolvingMetadata): Promise<Metadata> {
 
-    const Data: GithubUser =  await fetchDetails(params.slug);
+    const Data: GithubUser = await fetchDetails(params.slug);
 
     return {
         title: `Resume | ${Data.handel}`,

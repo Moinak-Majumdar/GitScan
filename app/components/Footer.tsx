@@ -7,7 +7,7 @@ const Footer = () => {
 
     const d = new Date()
     return (
-        <footer style={robotoMono.style} className='absolute bottom-0 left-0 w-full px-4  flex justify-center items-center text-xs text-slate-700 dark:text-slate-400'>
+        <footer style={robotoMono.style} className='mt-8 w-full px-4  flex justify-center items-center text-xs text-slate-700 dark:text-slate-400'>
             <span className='mr-2 text-lg'>&copy;</span>
             <span>{`${d.getFullYear()} - `}</span>
             <span className='ml-2'>All Right Reserved</span>

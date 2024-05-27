@@ -30,12 +30,13 @@ export default function Home() {
   } else {
     return (
       <>
+        <main className="flex justify-center items-center min-h-screen" >
+          <NoUser />
+        </main>
+        {/* button at navbar */}
         <div className="hidden lg:block absolute top-4 right-56 xl:right-72 2xl:right-[22rem] z-40">
           <SearchUser setUser={setUserData} />
         </div>
-        <main className="lg:h-[100vh] overflow-hidden flex justify-center items-center" >
-          <NoUser />
-        </main>
       </>
     );
   }
