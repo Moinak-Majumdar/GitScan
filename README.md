@@ -47,7 +47,7 @@ We welcome contributions from the community! Whether it's bug fixes, feature enh
 
 ## Feedback
 
-Have any questions, suggestions, or feedback? We'd love to hear from you! Reach out to me or [open an issue](link_to_issues) on GitHub.
+Have any questions, suggestions, or feedback? We'd love to hear from you! Reach out to [me](https://moinak05.vercel.app/#HireMe) or [open an issue](https://github.com/Moinak-Majumdar/GitScan/issues) on GitHub.
 
 ## License
 
