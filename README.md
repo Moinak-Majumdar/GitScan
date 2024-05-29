@@ -36,7 +36,10 @@ To start exploring GitHub user stats and generating your GitScan profile:
 - Resume page
 
 ![Screenshot 2024-05-16 004149](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/d207fae7-326e-49fc-985a-d609f871b4d6)
-![Screenshot 2024-05-16 002721](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/3410b7d7-1d26-4a93-89a1-8a86c7862ef6)
+![Screenshot 2024-05-29 194624](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/9124e0f3-0d51-4dba-ba76-0ba8d1f41c57)
+![Screenshot 2024-05-29 194738](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/501ff7c0-ac24-474d-8e36-a61a0797b73c)
+![Screenshot 2024-05-29 194801](https://github.com/Moinak-Majumdar/GitScan/assets/99950805/d4c58c74-395a-49cd-a41f-71bfb7573d44)
+
 
 ## Contributing
 
