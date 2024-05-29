@@ -3,7 +3,7 @@
 import { useRef, useEffect, FormEvent, Dispatch, SetStateAction } from 'react'
 import { IoMdSearch } from "react-icons/io";
 import { useAppTheme } from '../context/AppTheme';
-import { GithubServer } from '../utils/GitHub';
+import { GithubUserServer } from '../utils/GitHubUser';
 import { GithubUser } from '../utils/models';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -37,7 +37,7 @@ const SearchUser = (props: props) => {
         dialogRef.current?.close()
 
         if (uname != null) {
-            const server = new GithubServer(uname);
+            const server = new GithubUserServer(uname);
             const res = await server.get()
 
             if (res.ok) {

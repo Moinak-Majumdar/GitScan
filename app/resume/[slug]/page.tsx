@@ -1,5 +1,5 @@
-import { GithubServer } from "@/app/utils/GitHub"
-import { GithubUser } from "@/app/utils/models";
+import { GithubResumeServer } from "@/app/utils/GitHubResume";
+import { GithubUser, GithubRepo } from "@/app/utils/models";
 import { Inter, Roboto_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,12 +7,14 @@ import { MdOutlineEmail, MdLocationPin } from "react-icons/md";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import LangChart from "../../components/LangChart";
 import { Metadata, ResolvingMetadata } from "next/dist/lib/metadata/types/metadata-interface";
+import Repos from "../components/Repos";
 
 const inter = Inter({ display: 'swap', weight: ['300', "400", "500", "600", "700"], subsets: ['latin'] });
 const robotoMono = Roboto_Mono({ display: 'swap', weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] });
 
+
 async function fetchDetails(slug: string) {
-    const server = new GithubServer(slug)
+    const server = new GithubResumeServer(slug)
 
     const res = await server.get();
 
@@ -25,17 +27,19 @@ async function fetchDetails(slug: string) {
 
 export default async function User({ params }: { params: { slug: string } }) {
 
-    const userData: GithubUser = await fetchDetails(params.slug);
+    const resumeData = await fetchDetails(params.slug);
+    const userData: GithubUser = resumeData.userData;
+    const repoData: GithubRepo[] = resumeData.repoData;
 
     return (
-        <main className="md:h-[100vh] flex justify-center items-center px-0">
-            <section className="w-full md:w-fit mt-20 md:mt-12 flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
+        <main className="flex justify-center items-center flex-col 2xl:px-44 xl:px-36 lg:px-16 md:px-10">
+            <section className="w-full mt-20 flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
                 <div className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12 rounded-xl">
-                    <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full" style={{background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%'}}>
+                    <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full" style={{ background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%' }}>
                         <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="block w-full h-auto rounded-full border-[6px] border-blue-200 dark:border-slate-800" />
                     </div>
                     <Link href={userData.githubUrl} style={inter.style} className="mt-4 text-blue-600 hover:text-blue-500 text-sm md:text-lg">{`@${userData.handel}`}</Link>
-                    <article className="max-w-72 mt-4 text-xs md:text-sm">
+                    <article className="max-w-[30rem] mt-4 text-xs md:text-sm">
                         <p className="text-gray-700 dark:text-gray-300">{userData.bio}</p>
                     </article>
                     <div className="text-xs flex items-center gap-2 mt-4 justify-center lg:justify-start w-full text-slate-700 dark:text-slate-300">
@@ -50,14 +54,13 @@ export default async function User({ params }: { params: { slug: string } }) {
                         <FaExternalLinkAlt className="text-lg text-blue-900 dark:text-blue-800" />
                         {userData.website ? <Link href={userData.website} target="_BLANK" className="text-blue-500 hover:text-blue-600">{userData.website}</Link> : <span>Not found!</span>}
                     </div>
-
                 </div>
-                <div className="w-full md:w-fit flex flex-col p-4 md:p-8 xl:p-12">
+                <div className="w-full flex flex-col p-4 md:p-8 xl:p-12">
                     <div className="mt-8 lg:mt-0 text-center lg:text-start">
                         <h2 className="text-4xl font-bold text-slate-700 dark:text-blue-300" style={robotoMono.style}>{userData.name}</h2>
                         <h4 className="mt-4 text-xs dark:text-slate-300 text-slate-600">{userData.accCreatedAt}</h4>
                     </div>
-                    <div className="flex flex-col-reverse lg:flex-row md:justify-between w-full items-center">
+                    <div className="flex flex-col-reverse lg:flex-row md:justify-evenly w-full items-center ">
                         <div className="my-12 lg:my-0">
                             <div className="relative overflow-x-auto rounded-md mt-8">
                                 <table className="w-full text-sm text-left rtl:text-right ">
@@ -101,12 +104,13 @@ export default async function User({ params }: { params: { slug: string } }) {
                                 </table>
                             </div>
                         </div>
-                        <div className="h-72 lg:h-80 xl:h-[22rem] w-full flex justify-center items-center mt-12 lg:mt-0">
+                        <div className="w-fit flex justify-center items-center mt-12 lg:mt-0">
                             {userData.usedLanguages ? <LangChart languages={userData.usedLanguages} /> : <></>}
                         </div>
                     </div>
                 </div>
             </section>
+            <Repos Data={repoData} />
         </main >
     )
 }
@@ -117,7 +121,8 @@ type metaDataProps = {
 }
 export async function generateMetadata({ params, searchParams }: metaDataProps, parent: ResolvingMetadata): Promise<Metadata> {
 
-    const Data: GithubUser = await fetchDetails(params.slug);
+    const res = await fetchDetails(params.slug);
+    const Data: GithubUser = res.userData;
 
     return {
         title: `Resume | ${Data.handel}`,
@@ -134,3 +139,4 @@ export async function generateMetadata({ params, searchParams }: metaDataProps, 
         }
     }
 }
+

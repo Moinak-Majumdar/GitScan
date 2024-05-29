@@ -2,7 +2,7 @@ import getLanguageColor from "./colors";
 import { GithubUser } from "./models";
 
 
-class GithubServer {
+class GithubUserServer {
     private uname: string
 
     constructor(uname: string) {
@@ -10,7 +10,6 @@ class GithubServer {
     }
 
     async get(): Promise<Response> {
-
         let userData: GithubUser = { name: '', accCreatedAt: '', avatar: '', bio: '', email: '', followers: 0, following: 0, forkCount: 0, githubUrl: '', handel: this.uname, issueCount: 0, location: '', repos: 0, stars: 0, usedLanguages: null, watcherCount: 0, website: '' };
 
         const headers = new Headers()
@@ -113,4 +112,4 @@ function formatDate(date: string): string {
 
 
 
-export { GithubServer }
+export { GithubUserServer }

@@ -14,7 +14,7 @@ const robotoMono = Roboto_Mono({ display: 'swap', weight: ['300', '400', '500', 
 const DisplayUserLeftPart = ({ userData }: { userData: GithubUser }) => {
   return (
     <>
-      <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full" style={{ background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%' }}>
+      <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full mt-4" style={{ background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%' }}>
         <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="block w-full h-auto rounded-full border-[6px] border-blue-200 dark:border-slate-800" />
       </div>
       <p style={robotoMono.style} className="text-xs mt-12 text-slate-700 dark:text-slate-300">

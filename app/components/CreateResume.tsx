@@ -1,7 +1,7 @@
 'use client'
 
-import { FormEvent, RefObject, useRef, useState } from 'react'
-import { GithubServer } from '../utils/GitHub';
+import { FormEvent, RefObject, useRef, useState } from 'react';
+import { GithubResumeServer } from '../utils/GitHubResume';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';
@@ -22,7 +22,7 @@ const CreateResume = (props: props) => {
         const uName = uNameRef.current?.value;
 
         if (uName != null) {
-            const server = new GithubServer(uName);
+            const server = new GithubResumeServer(uName);
             const res = await server.get()
 
             if (res.ok) {

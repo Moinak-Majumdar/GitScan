@@ -22,3 +22,20 @@ export type GithubUser = {
     issueCount: number,  // total issue opened in all repos
 }
 
+// name, html_url, crated_at, updated_at, homepage, stargazer_count, watcher_count, open_issue_count, license.name, topics, 
+
+export type GithubRepo = {
+    name: string, //repository name
+    url: string, //repo url
+    created_at: string, //date
+    updated_at: string,
+    homepage: string | null, //production url
+    stars: number,
+    watchers: number,
+    forks: number,
+    issue: number,
+    license: string | null, //license name
+    topics: string[] | null,
+    language: {name: string, color: string} | null,
+    description: string | null, // repo description
+}

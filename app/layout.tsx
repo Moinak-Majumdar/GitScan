@@ -1,8 +1,7 @@
-
-
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react"
 import AppTheme from "./context/AppTheme";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -20,6 +19,7 @@ export default function RootLayout({ children }: props) {
             <Footer />
         </AppTheme>
       </body>
+      <Analytics />
     </html>
   );
 }
