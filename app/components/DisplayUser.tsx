@@ -20,18 +20,18 @@ const DisplayUserLeftPart = ({ userData }: { userData: GithubUser }) => {
       <p style={robotoMono.style} className="text-xs mt-12 text-slate-700 dark:text-slate-300">
         {userData.accCreatedAt}
       </p>
-      <div className="text-xs flex items-center gap-2 mt-8 justify-center w-full text-slate-700 dark:text-slate-300">
+      <div style={inter.style} className="text-xs flex items-center gap-2 mt-8 justify-center w-full text-slate-700 dark:text-slate-300">
         <MdLocationPin className="text-lg text-slate-500" />
         <span>{userData.location}</span>
       </div>
-      <div className="text-xs flex items-center gap-2 mt-4 justify-center  w-full text-slate-700 dark:text-slate-300">
+      <div style={inter.style} className="text-xs flex items-center gap-2 mt-4 justify-center  w-full text-slate-700 dark:text-slate-300">
         <MdOutlineEmail className="text-xl text-red-600" />
         {userData.email ? <Link href={`mailto:${userData.email}`}>{userData.email}</Link> : <span>Not found!</span>}
       </div>
-      <div className="text-xs flex items-center gap-2 mt-4 justify-center w-full text-slate-700 dark:text-slate-300">
-        <FaExternalLinkAlt className="text-lg text-blue-900 dark:text-blue-800" />
-        {userData.website ? <Link href={userData.website} target="_BLANK" className="text-blue-500 hover:text-blue-600">{userData.website}</Link> : <span>Not found!</span>}
-      </div>
+      {userData.website && <div style={inter.style} className="text-xs flex items-center gap-2 mt-4 justify-center lg:justify-start lg:mr-auto w-fit ring-2 ring-blue-600 px-3 py-2 rounded-full bg-blue-400 hover:ring-blue-700">
+        <FaExternalLinkAlt className="text-lg text-blue-900" />
+        <Link href={userData.website} target="_BLANK" className="text-blue-900 font-semibold">Blog / Website</Link>
+      </div>}
     </>
   )
 }

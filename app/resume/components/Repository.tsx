@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { formatDate } from '@/app/utils/GitHubResume';
+import Link from 'next/link'
 import { GoLaw, GoEye, GoIssueOpened } from "react-icons/go";
 import { FaRegStar, FaExternalLinkAlt } from "react-icons/fa";
 import { FaCodeFork } from "react-icons/fa6";
 import { GithubRepo } from '@/app/utils/models';
 import { Inter, Montserrat, Open_Sans, Roboto_Mono } from 'next/font/google';
 import { RiGitRepositoryFill } from 'react-icons/ri';
+import { repoDateFormat } from '@/app/utils/utils';
 
 const inter = Inter({ display: 'swap', weight: ['300', "400", "500", "600", "700"], subsets: ['latin'] });
 const openSans = Open_Sans({ display: "swap", weight: ["300", "400", "500", "600", "700"], subsets: ['latin'] });
@@ -51,7 +51,7 @@ const Repository = (props: { repos: GithubRepo[] }) => {
               </div>}
             </div>
             <div className='mt-2 flex flex-wrap gap-4 justify-start items-center'>
-              <p className='text-xs text-slate-700 font-semibold dark:text-blue-200/80' style={openSans.style}>{`Updated on ${formatDate(repo.updated_at)}`}</p>
+              <p className='text-xs text-slate-700 font-semibold dark:text-blue-200/80' style={openSans.style}>{`Updated on ${repoDateFormat(repo.updated_at)}`}</p>
               {repo.license && <div className='flex items-center gap-1 border border-blue-300 rounded-full px-2 py-1 dark:text-blue-300 text-slate-700' style={inter.style}>
                 <GoLaw />
                 <span className='text-xs'>{repo.license}</span>

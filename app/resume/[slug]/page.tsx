@@ -1,4 +1,4 @@
-import { GithubResumeServer } from "@/app/utils/GitHubResume";
+import GithubResumeServer  from "@/app/utils/GitHubResume";
 import { GithubUser, GithubRepo } from "@/app/utils/models";
 import { Inter, Roboto_Mono } from "next/font/google";
 import Image from "next/image";
@@ -34,7 +34,7 @@ export default async function User({ params }: { params: { slug: string } }) {
     return (
         <main className="flex justify-center items-center flex-col 2xl:px-44 xl:px-36 lg:px-16 md:px-10">
             <section className="w-full mt-20 flex flex-col md:flex-row bg-sky-100 dark:bg-black/20 rounded-xl">
-                <div className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12 rounded-xl">
+                <div style={inter.style} className="flex items-center flex-col bg-blue-200/80 dark:bg-slate-800  p-4 md:p-8 xl:p-12 rounded-xl">
                     <div className="inline-flex justify-center items-center p-[2px] animate-shift rounded-full" style={{ background: 'linear-gradient(45deg, #f06, #f79, #06f, #79f, #0ff, #9f7)', backgroundSize: '300%, 300%' }}>
                         <Image src={userData.avatar} alt="Github user avatar" width={250} height={250} className="block w-full h-auto rounded-full border-[6px] border-blue-200 dark:border-slate-800" />
                     </div>
@@ -50,10 +50,10 @@ export default async function User({ params }: { params: { slug: string } }) {
                         <MdOutlineEmail className="text-xl text-red-600" />
                         {userData.email ? <Link href={`mailto:${userData.email}`}>{userData.email}</Link> : <span>Not found!</span>}
                     </div>
-                    <div className="text-xs flex items-center gap-2 mt-2 justify-center lg:justify-start w-full text-slate-700 dark:text-slate-300">
-                        <FaExternalLinkAlt className="text-lg text-blue-900 dark:text-blue-800" />
-                        {userData.website ? <Link href={userData.website} target="_BLANK" className="text-blue-500 hover:text-blue-600">{userData.website}</Link> : <span>Not found!</span>}
-                    </div>
+                    {userData.website && <div className="text-xs flex items-center gap-2 mt-4 justify-center lg:justify-start lg:mr-auto w-fit ring-2 ring-blue-600 px-3 py-2 rounded-full bg-blue-400 hover:ring-blue-700">
+                        <FaExternalLinkAlt className="text-lg text-blue-900" />
+                        <Link href={userData.website} target="_BLANK" className="text-blue-900 font-semibold">Blog / Website</Link> 
+                    </div>}
                 </div>
                 <div className="w-full flex flex-col p-4 md:p-8 xl:p-12">
                     <div className="mt-8 lg:mt-0 text-center lg:text-start">
@@ -110,7 +110,7 @@ export default async function User({ params }: { params: { slug: string } }) {
                     </div>
                 </div>
             </section>
-            <Repos Data={repoData} />
+            {repoData.length > 0 && <Repos Data={repoData} />}
         </main >
     )
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { FormEvent, RefObject, useRef, useState } from 'react';
-import { GithubResumeServer } from '../utils/GitHubResume';
+import  GithubResumeServer  from '../utils/GitHubResume';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Link from 'next/link';

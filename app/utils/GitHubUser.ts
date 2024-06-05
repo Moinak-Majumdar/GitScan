@@ -1,5 +1,6 @@
 import getLanguageColor from "./colors";
 import { GithubUser } from "./models";
+import { userDateFormat, validateURL } from "./utils";
 
 
 class GithubUserServer {
@@ -33,14 +34,14 @@ class GithubUserServer {
 
             userData.name = json['name'] ?? this.uname;
             userData.githubUrl = json['html_url'];
-            userData.accCreatedAt = formatDate(json['created_at']);
+            userData.accCreatedAt = userDateFormat(json['created_at']);
             userData.avatar = json["avatar_url"];
             userData.bio = json['bio'] ?? 'This profile has no bio.';
             userData.followers = json['followers'];
             userData.following = json['following'];
             userData.location = json['location'] ?? 'Not available';
             userData.repos = json['public_repos'];
-            userData.website = json['blog'] === '' ? null : json['blog'];
+            userData.website = validateURL(json['blog']);
             userData.email = json['email']
 
             // ------------------
@@ -88,25 +89,6 @@ class GithubUserServer {
         return new Response(JSON.stringify(userData), { status: 200, headers: { 'Content-type': 'application/json' }})
 
     }
-}
-
-function formatDate(date: string): string {
-    const d = new Date(date)
-    const mm = d.toLocaleDateString('eng-us', { month: 'short' })
-    const dd = d.getDate()
-    let sup = ''
-    if (dd == 1) {
-        sup = 'st'
-    } else if (dd == 2) {
-        sup = 'nd'
-    } else if (dd == 3) {
-        sup = 'rd'
-    } else {
-        sup = 'th'
-    }
-    const yy = d.getFullYear()
-
-    return `Joined ${dd}${sup} ${mm} ${yy}`
 }
 
 

@@ -1,5 +1,6 @@
 import getLanguageColor from "./colors";
 import { GithubUser, GithubRepo } from "./models";
+import { userDateFormat, validateURL } from "./utils";
 
 
 class GithubResumeServer {
@@ -34,14 +35,14 @@ class GithubResumeServer {
 
             userData.name = json['name'] ?? this.uname;
             userData.githubUrl = json['html_url'];
-            userData.accCreatedAt = formatDate(json['created_at']);
+            userData.accCreatedAt = userDateFormat(json['created_at']);
             userData.avatar = json["avatar_url"];
             userData.bio = json['bio'] ?? 'This profile has no bio.';
             userData.followers = json['followers'];
             userData.following = json['following'];
             userData.location = json['location'] ?? 'Not available';
             userData.repos = json['public_repos'];
-            userData.website = json['blog'] === '' ? null : json['blog'];
+            userData.website = validateURL(json['blog']);
             userData.email = json['email']
 
             // ------------------
@@ -81,16 +82,16 @@ class GithubResumeServer {
                                 name: repo['name'],
                                 created_at: repo["created_at"],
                                 description: repo["description"],
-                                homepage: repo['homepage'],
+                                homepage: validateURL(repo['homepage']),
                                 issue: repo["open_issues_count"],
                                 forks: repo['forks_count'],
-                                language: repo.language != null ? {name: repo.language, color: getLanguageColor(repo.language)}: null,
+                                language: repo.language != null ? { name: repo.language, color: getLanguageColor(repo.language) } : null,
                                 license: repo["license"] != null ? repo["license"].name : null,
                                 stars: repo["stargazers_count"],
                                 topics: repo['topics'].length > 0 ? repo['topics'] : null,
                                 updated_at: repo["updated_at"],
                                 url: repo['html_url'],
-                                watchers: repo["watchers_count"], 
+                                watchers: repo["watchers_count"],
                             })
                         })
                     }
@@ -99,24 +100,16 @@ class GithubResumeServer {
 
         } catch (error) {
             // console.log(error)
-            return new Response(JSON.stringify({ 'error': 'No records found!' }), { status: 400, headers: { 'Content-type': 'application/json' }})
+            return new Response(JSON.stringify({ 'error': 'No records found!' }), { status: 400, headers: { 'Content-type': 'application/json' } })
         }
 
-        return new Response(JSON.stringify({userData, repoData}), { status: 200, headers: { 'Content-type': 'application/json' }})
+        return new Response(JSON.stringify({ userData, repoData }), { status: 200, headers: { 'Content-type': 'application/json' } })
 
     }
 }
 
-function formatDate(date: string): string {
-    const d = new Date(date)
-    const mm = d.toLocaleDateString('eng-us', { month: 'short' })
-    const dd = d.getDate()
-    const yy = d.getFullYear()
-
-    return `${mm} ${dd}, ${yy}`
-}
 
 
 
 
-export { GithubResumeServer, formatDate }
+export default GithubResumeServer
